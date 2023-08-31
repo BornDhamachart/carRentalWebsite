@@ -56,10 +56,10 @@ export default function Home({ searchParams }: HomeProps) {
               ))}
             </div>
 
-            <ShowMore
+            {/* <ShowMore
               pageNumber={(searchParams.limit || 10) / 10}
               isNext={(searchParams.limit || 10) > getCarsData.length}
-            />
+            /> */}
           </section>
         ) : (
           <div className='mt-16 flex justify-center items-center flex-col gap-2'>
