@@ -1,5 +1,3 @@
-"use client";
-
 import {
     useQuery,
     useMutation,
@@ -9,8 +7,6 @@ import {
   import {
     GET_CARS_REQUEST
   } from "@/api/getCars";
-
-
 
 export const useGetCars = (
     filters?: any,
