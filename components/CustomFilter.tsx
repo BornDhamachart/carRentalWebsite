@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Listbox, Transition } from "@headlessui/react";
-
+import {useUpdateSearchParams} from "@/hooks/useUpdateSearchParams";
 import { CustomFilterProps } from "@/types";
 
 export default function CustomFilter({ title, options }: CustomFilterProps) {
@@ -11,22 +11,9 @@ export default function CustomFilter({ title, options }: CustomFilterProps) {
 
   // update the URL search parameters and navigate to the new URL
   const handleUpdateParams = (e: { title: string; value: string }) => {
-    const newPathName = updateSearchParams(title, e.value.toLowerCase());
+    const newPathName = useUpdateSearchParams(title, e.value.toLowerCase());
 
     router.push(newPathName);
-  };
-
-  const updateSearchParams = (type: string, value: string) => {
-    // Get the current URL search params
-    const searchParams = new URLSearchParams(window.location.search);
-  
-    // Set the specified search parameter to the given value
-    searchParams.set(type, value);
-  
-    // Set the specified search parameter to the given value
-    const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
-  
-    return newPathname;
   };
 
   return (

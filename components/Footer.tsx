@@ -52,3 +52,5 @@ const Footer = () => {
 }
 
 export default Footer
+
+//Adjust details data

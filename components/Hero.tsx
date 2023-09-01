@@ -37,3 +37,8 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+//Change component name not HERO!!
+//Change button
+//Change image and BG image
