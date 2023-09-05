@@ -1,4 +1,3 @@
-import React from 'react'
 import { CarProps } from "@/types";
 
 export const useGenerateCarImageUrl = (car: CarProps, angle?: string) => {

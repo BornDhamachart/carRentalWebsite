@@ -1,37 +1,24 @@
-import Image from "next/image";
 import Hero from "@/components/Hero";
-import SearchBar from "@/components/SearchBar";
-import CustomFilter from "@/components/CustomFilter";
-import ShowMore from "@/components/ShowMore";
+import SearchComponent from "@/components/SearchComponent";
 import CarCard from "@/components/CarCard";
+import Testimonial from "@/components/Testimonial";
 import { useGetCars } from "@/hooks/useGetCars";
 import React, { useState, useEffect } from "react";
-import { fuels, yearsOfProduction } from "@/constants";
-import { HomeProps } from "@/types";
+import { Space, Spin } from "antd";
+import { FilterProps, CarProps } from "@/types";
 
-export default function Home({ searchParams }: HomeProps) {
-
-  const filters = {
-    manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || 2022,
-    fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
-    model: searchParams.model || "",
-  };
-
-  // const filters = {
-  //   manufacturer:  "",
-  //   year:  2022,
-  //   fuel: "",
-  //   limit: 10,
-  //   model: "",
-  // };
+export default function Home() {
+  const [filters, setFilters] = useState<FilterProps>({
+    make: "",
+    year: "2023",
+    fuel: "",
+    limit: 10,
+    model: "",
+  });
 
   const {
     data: getCarsData,
-    isLoading: isLoadingGetCarsData,
     isFetching: isFetchingGetCarsData,
-    isError: isErrorGetCarsData,
     refetch: refetchGetCarsData,
   } = useGetCars(filters);
 
@@ -39,45 +26,59 @@ export default function Home({ searchParams }: HomeProps) {
     console.log("getCarsData", getCarsData);
   }, [getCarsData]);
 
-  const isDataEmpty =
-    !Array.isArray(getCarsData) || getCarsData.length < 1 || !getCarsData;
+  useEffect(() => {
+    refetchGetCarsData();
+  }, [filters]);
 
   return (
     <main className="overflow-hidden">
       <Hero />
-      <div className="mt-12 padding-x padding-y max-width" id="discover">
-        <div className="flex flex-col items-start justify-start gap-y-2.5 text-black-100">
+      <div className="mt-12 w-full">
+        <div className="flex flex-col items-start justify-start gap-y-3 text-black-100">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
-          <p>Explore out cars you might like</p>
+          <div>Explore out cars you might like</div>
         </div>
 
-        <div className="mt-12 w-full flex-between items-center flex-wrap gap-5">
-          <SearchBar />
+        <SearchComponent setFilters={setFilters} />
 
-          <div className="flex justify-start flex-wrap items-center gap-2">
-            <CustomFilter title="fuel" options={fuels} />
-            <CustomFilter title="year" options={yearsOfProduction} />
+        {isFetchingGetCarsData === true ? (
+          <div className="flex justify-center w-full my-12">
+            <Space size="middle">
+              <Spin tip="Loading..." />
+            </Space>
           </div>
-        </div>
-
-        {!isDataEmpty ? (
-          <section>
-            <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
-              {getCarsData?.map((car) => (
-                <CarCard car={car} />
-              ))}
-            </div>
-
-            <ShowMore
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > getCarsData.length}
-            />
-          </section>
         ) : (
-          <div className="mt-16 flex justify-center items-center flex-col gap-2">
-            <h2 className="text-black text-xl font-bold">Oops, no results</h2>
-            <p>{getCarsData?.message}</p>
-          </div>
+          <>
+            {getCarsData.length > 0 ? (
+              <section>
+                <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
+                  {getCarsData?.map((car:CarProps) => (
+                    <CarCard car={car} />
+                  ))}
+                </div>
+
+                <div className="flex justify-center">
+                  <button
+                    className="bg-primary-blue text-white rounded-full mt-10 py-2 px-4"
+                    onClick={() => {
+                      setFilters((prevState) => ({
+                        ...prevState,
+                        limit: prevState.limit + 10,
+                      }));
+                    }}
+                  >
+                    Show More
+                  </button>
+                </div>
+
+                <Testimonial />
+              </section>
+            ) : (
+              <div className="mt-16 flex justify-center items-center">
+                <h2 className="text-black text-xl font-bold">No results</h2>
+              </div>
+            )}
+          </>
         )}
       </div>
     </main>
