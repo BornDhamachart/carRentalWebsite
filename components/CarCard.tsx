@@ -39,8 +39,8 @@ const CarCard = ({ car }: CarCardProps) => {
         <Image
           src={useGenerateCarImageUrl(car)}
           alt="car model"
-          fill
-          priority
+          width={400}
+          height={40}
           className="object-contain"
         />
       </div>
@@ -52,18 +52,26 @@ const CarCard = ({ car }: CarCardProps) => {
               src="/steering-wheel.svg"
               width={20}
               height={20}
-              alt="steering wheel"
+              alt="steering wheel logo"
             />
             <p className="text-[14px] leading-[17px]">
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
-            <Image src="/tire.svg" width={20} height={20} alt="seat" />
+            <Image 
+            src="/tire.svg" 
+            width={20} 
+            height={20} 
+            alt="tire logo" />
             <p className="car-card__icon-text">{drive.toUpperCase()}</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
-            <Image src="/gas.svg" width={20} height={20} alt="seat" />
+            <Image 
+            src="/gas.svg" 
+            width={20} 
+            height={20} 
+            alt="gas logo" />
             <p className="text-[14px] leading-[17px]">{city_mpg} MPG</p>
           </div>
         </div>

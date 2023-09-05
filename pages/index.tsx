@@ -44,7 +44,7 @@ export default function Home() {
         {isFetchingGetCarsData === true ? (
           <div className="flex justify-center w-full my-12">
             <Space size="middle">
-              <Spin tip="Loading..." />
+              <Spin />
             </Space>
           </div>
         ) : (
