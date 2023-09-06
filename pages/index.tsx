@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import SearchComponent from "@/components/SearchComponent";
 import CarCard from "@/components/CarCard";
 import Testimonial from "@/components/Testimonial";
+import Faq from "@/components/Faq";
 import { useGetCars } from "@/hooks/useGetCars";
 import React, { useState, useEffect } from "react";
 import { Space, Spin } from "antd";
@@ -52,9 +53,9 @@ export default function Home() {
             {getCarsData.length > 0 ? (
               <section>
                 <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
-                  {getCarsData?.map((car:CarProps) => (
+                  {/* {getCarsData?.map((car:CarProps) => (
                     <CarCard car={car} />
-                  ))}
+                  ))} */}
                 </div>
 
                 <div className="flex justify-center">
@@ -70,14 +71,14 @@ export default function Home() {
                     Show More
                   </button>
                 </div>
-
-                <Testimonial />
               </section>
             ) : (
               <div className="mt-16 flex justify-center items-center">
                 <h2 className="text-black text-xl font-bold">No results</h2>
               </div>
             )}
+            <Testimonial />
+            <Faq />
           </>
         )}
       </div>

@@ -41,7 +41,6 @@ const CarCard = ({ car }: CarCardProps) => {
           alt="car model"
           width={400}
           height={40}
-          className="object-contain"
         />
       </div>
 

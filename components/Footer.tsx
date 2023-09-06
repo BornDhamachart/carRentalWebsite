@@ -2,6 +2,7 @@ import React from 'react'
 import Image from "next/image"
 import Link from "next/link";
 import { footerLinks } from "@/constants";
+import EmailSub from "@/components/EmailSub"
 
 const Footer = () => {
   return (
@@ -32,8 +33,11 @@ const Footer = () => {
             </div>
           </div>
         ))}
+        <EmailSub />
       </div>
     </div>
+
+    
 
     <div className='flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10'>
       <p>@2023 CarHub. All rights reserved</p>

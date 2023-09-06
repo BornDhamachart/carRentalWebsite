@@ -3,9 +3,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { AppProps } from "next/app";
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";

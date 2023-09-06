@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form, Input, Select } from "antd";
-import { manufacturers, yearsOfProduction, fuels } from "@/constants";
+import { manufacturers, yearsOfProduction, fuels, searchInitialValue } from "@/constants";
 import { FilterProps } from "@/types";
 
 interface SearchComponentProps {
@@ -23,28 +23,15 @@ const SearchComponent = ({ setFilters }: SearchComponentProps) => {
   };
 
   const onReset = () => {
-    form.setFieldsValue({
-      make: "",
-      year: "2023",
-      fuel: "",
-      limit: 10,
-      model: "",
-    });
-    setFilters((prevState) => ({
-      ...prevState,
-      make: "",
-      year: "2023",
-      fuel: "",
-      limit: 10,
-      model: "",
-    }));
+    form.setFieldsValue(searchInitialValue);
+    setFilters(searchInitialValue);
   };
 
   return (
     <Form
       form={form}
       preserve={false}
-      initialValues={{ make: "", year: "2023", fuel: "", limit: 10, model: "" }}
+      initialValues={searchInitialValue}
       onFinish={onSubmitForm}
       autoComplete="off"
     >
