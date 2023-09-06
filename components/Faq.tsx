@@ -7,7 +7,7 @@ const items: CollapseProps["items"] = [
     key: "1",
     label: "How do I make a reservation?",
     children: (
-        <p className="word-breaks w-full">
+      <p className="word-breaks w-full">
         To reserve a rental car, simply visit our website and enter your desired
         pickup location, dates, and times. Browse through the available car
         options, select the one that suits your needs, and follow the booking
@@ -19,7 +19,7 @@ const items: CollapseProps["items"] = [
     key: "2",
     label: "What are the requirements for renting a car?",
     children: (
-        <p className="word-breaks w-full">
+      <p className="word-breaks w-full">
         To rent a car, you typically need a valid driver's license, a credit
         card in your name, and in some cases, proof of insurance. Specific
         requirements may vary depending on your location and the car rental
@@ -45,13 +45,14 @@ const items: CollapseProps["items"] = [
 const Faq = () => {
   return (
     <>
-    <h1 className="text-6xl font-bold ml-8 w-full text-center">FAQs</h1>
-    <div className="w-2/3 flex justify-center">
-  <Collapse items={items} defaultActiveKey={["1"]} />
-  </div>
-  </>
-  )
-  
+      <h1 className="text-4xl font-bold w-full text-center my-8">FAQs</h1>
+      <div className="flex justify-center">
+      <div className="w-1/2">
+        <Collapse items={items} defaultActiveKey={["1"]} />
+      </div>
+      </div>
+    </>
+  );
 };
 
 export default Faq;

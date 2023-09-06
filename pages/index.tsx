@@ -7,15 +7,10 @@ import { useGetCars } from "@/hooks/useGetCars";
 import React, { useState, useEffect } from "react";
 import { Space, Spin } from "antd";
 import { FilterProps, CarProps } from "@/types";
+import { searchInitialValue } from "@/constants";
 
 export default function Home() {
-  const [filters, setFilters] = useState<FilterProps>({
-    make: "",
-    year: "2023",
-    fuel: "",
-    limit: 10,
-    model: "",
-  });
+  const [filters, setFilters] = useState<FilterProps>(searchInitialValue);
 
   const {
     data: getCarsData,
@@ -23,9 +18,9 @@ export default function Home() {
     refetch: refetchGetCarsData,
   } = useGetCars(filters);
 
-  useEffect(() => {
-    console.log("getCarsData", getCarsData);
-  }, [getCarsData]);
+  // useEffect(() => {
+  //   console.log("getCarsData", getCarsData);
+  // }, [getCarsData]);
 
   useEffect(() => {
     refetchGetCarsData();
@@ -35,9 +30,9 @@ export default function Home() {
     <main className="overflow-hidden">
       <Hero />
       <div className="mt-12 w-full">
-        <div className="flex flex-col items-start justify-start gap-y-3 text-black-100">
+        <div className="flex flex-col items-start justify-start gap-y-3 text-black-100 px-16">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
-          <div>Explore out cars you might like</div>
+          <div className="text-gray-500">Explore out cars you might like</div>
         </div>
 
         <SearchComponent setFilters={setFilters} />

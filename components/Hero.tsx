@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Hero = () => {
 
   return (
@@ -20,7 +22,7 @@ const Hero = () => {
       <div className="xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen">
         <div className="relative xl:w-full w-[90%] xl:h-full h-[590px] z-0">
           {/* <Image
-            src="/hero.png"
+            src="/car.png"
             alt="hero"
             width={200}
             height={30}

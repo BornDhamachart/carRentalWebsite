@@ -34,6 +34,7 @@ const SearchComponent = ({ setFilters }: SearchComponentProps) => {
       initialValues={searchInitialValue}
       onFinish={onSubmitForm}
       autoComplete="off"
+      className="px-16 mt-6"
     >
       <div className="flex w-full gap-6">
         <Form.Item name="make" className="w-1/2">
@@ -87,7 +88,7 @@ const SearchComponent = ({ setFilters }: SearchComponentProps) => {
           ></Select>
         </Form.Item>
       </div>
-      <div className="flex justify-end w-full gap-4 pt-6">
+      <div className="flex justify-end w-full gap-4 pt-2">
         <Form.Item>
           <Button
             htmlType="button"
