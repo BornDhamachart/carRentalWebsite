@@ -72,10 +72,11 @@ export default function Home() {
                 <h2 className="text-black text-xl font-bold">No results</h2>
               </div>
             )}
-            <Testimonial />
-            <Faq />
+            
           </>
         )}
+        <Testimonial />
+            <Faq />
       </div>
     </main>
   );
