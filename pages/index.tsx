@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import Title from "@/components/Title";
 import SearchComponent from "@/components/SearchComponent";
 import CarCard from "@/components/CarCard";
 import Testimonial from "@/components/Testimonial";
@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <main className="overflow-hidden">
-      <Hero />
+      <Title />
       <div className="mt-12 w-full">
         <div className="flex flex-col items-start justify-start gap-y-3 text-black-100 px-16">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
@@ -48,9 +48,9 @@ export default function Home() {
             {getCarsData.length > 0 ? (
               <section>
                 <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
-                  {/* {getCarsData?.map((car:CarProps) => (
+                  {getCarsData?.map((car: CarProps) => (
                     <CarCard car={car} />
-                  ))} */}
+                  ))}
                 </div>
 
                 <div className="flex justify-center">
@@ -72,11 +72,10 @@ export default function Home() {
                 <h2 className="text-black text-xl font-bold">No results</h2>
               </div>
             )}
-            
           </>
         )}
         <Testimonial />
-            <Faq />
+        <Faq />
       </div>
     </main>
   );

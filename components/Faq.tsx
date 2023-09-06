@@ -46,10 +46,10 @@ const Faq = () => {
   return (
     <>
       <h1 className="text-4xl font-bold w-full text-center my-8">FAQs</h1>
-      <div className="flex justify-center">
-      <div className="w-1/2">
-        <Collapse items={items} defaultActiveKey={["1"]} />
-      </div>
+      <div className="flex justify-center mb-8">
+        <div className="md:w-1/2 w-full md:mx-0 mx-2">
+          <Collapse items={items} defaultActiveKey={["1"]} />
+        </div>
       </div>
     </>
   );

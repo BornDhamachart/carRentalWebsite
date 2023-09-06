@@ -1,36 +1,28 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="flex w-full justify-between items-center sm:px-16 px-6 py-4">
-      <div className="w-1/2">
+    <nav className="flex w-full justify-between items-center px-6 py-4">
+      <div className="w-1/3 pt-2">
         <Link href="/">
-          {/* <Image
-            src="/logo.svg"
-            alt="Car Logo"
-            width={118}
-            height={18}
-            className="object-contain"
-          /> */}
-          <h1 className="font-bold text-5xl">CTEST</h1>
+          <h1 className="font-bold md:text-4xl text-xl">CAR RENTAL</h1>
         </Link>
       </div>
-      <div className="flex gap-6 justify-center w-1/2">
+      <div className="flex gap-6 justify-end w-2/3">
         <button
-          className="text-black rounded-full bg-white min-w-[70px]"
+          className="text-black rounded-full bg-white min-w-[70px] hidden md:block"
           onClick={() => {}}
         >
           Home
         </button>
         <button
-          className="text-black rounded-full bg-white min-w-[70px]"
+          className="text-black rounded-full bg-white min-w-[70px] hidden md:block"
           onClick={() => {}}
         >
           Our cars
         </button>
         <button
-          className="text-black rounded-full bg-white min-w-[70px]"
+          className="text-black rounded-full bg-white min-w-[70px] hidden md:block"
           onClick={() => {}}
         >
           About

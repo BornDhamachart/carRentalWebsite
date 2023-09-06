@@ -10,8 +10,8 @@ const Testimonial = () => {
       <div className="text-gray-500 w-full text-center">
         Our clients have experienced our service and want to spread the word.
       </div>
-      <div className="flex gap-6 mt-6">
-        <div className="w-1/2">
+      <div className="flex gap-6 mt-6 md:flex-row flex-col">
+        <div className="md:w-1/2">
           <div className="flex flex-col items-center h-3/4">
             <Image
               src="/quote.svg"
@@ -30,7 +30,7 @@ const Testimonial = () => {
           <div className="mt-4 w-full text-right">John, May 2023</div>
         </div>
 
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <div className="flex flex-col items-center h-3/4">
             <Image
               src="/quote.svg"
@@ -42,7 +42,7 @@ const Testimonial = () => {
             <div className="word-breaks mt-2">
               Recommendation! I like it, how this works Simple, good car, nearly
               new, good communication for taking and returning the car see you
-              2022. I am a fan now!
+              2023. I am a fan now!
             </div>
           </div>
           <div className="mt-4 w-full text-right">Lisa, Jul 2023</div>

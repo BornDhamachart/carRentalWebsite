@@ -53,7 +53,6 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                 alt="car model"
                 width={250}
                 height={40}
-                // className="object-cover"
               />
             </div>
           </div>
