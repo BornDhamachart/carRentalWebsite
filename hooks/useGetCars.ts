@@ -1,15 +1,13 @@
 import {
     useQuery,
-    useMutation,
-    useQueryClient,
-    UseQueryResult,
   } from '@tanstack/react-query';
   import {
     GET_CARS_REQUEST
   } from "@/api/getCars";
+  import {FilterProps} from "@/types"
 
 export const useGetCars = (
-    filters?: any,
+    filters: FilterProps,
 
   ) => {
     return useQuery(

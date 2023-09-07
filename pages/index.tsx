@@ -45,7 +45,7 @@ export default function Home() {
           </div>
         ) : (
           <>
-            {getCarsData.length > 0 ? (
+            {getCarsData?.length > 0 ? (
               <section>
                 <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
                   {getCarsData?.map((car: CarProps) => (
