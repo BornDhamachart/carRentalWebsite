@@ -1,38 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Car Rental Website
 
-## Getting Started
+Welcome to the Car Rental Website project, where you can experience a seamless car rental process with our user-friendly mockup. Explore a diverse range of vehicles, easily book your preferred car, and discover transparent pricing, convenient search options, and a responsive design for a smooth online car rental experience.
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The Car Rental Website is designed to provide users with an immersive and intuitive car rental experience. Whether you're looking for a car for your next trip or simply want to explore the options available, our website is here to assist you. This project was created as a showcase and practice exercise to apply what I've learned.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Visit [https://car-rental-dc.vercel.app/](#) to explore our wide range of vehicles and experience the user-friendly booking process.
+- Although this is a mockup, you can get a feel for the car rental process and user interface.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Screenshots
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![Homepage Screenshot](public/carRental.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Support/Contact
 
-## Learn More
+If you have any questions, suggestions, or would like to discuss the project, please feel free to contact me via email at [dhamachart.c@gmail.com](mailto:dhamachart.c@gmail.com).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you for visiting the Car Rental Website project. Enjoy exploring the world of car rentals!
