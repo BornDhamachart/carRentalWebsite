@@ -32,13 +32,17 @@ const Navbar = () => {
           className="text-primary-blue rounded-full bg-white min-w-[70px]"
           onClick={() => {}}
         >
+          <Link href="/login">
           Sign in
+          </Link>
         </button>
         <button
           className="bg-primary-blue rounded-lg text-white min-w-[70px] px-4 py-2"
           onClick={() => {}}
         >
+          <Link href="/register">
           Register
+          </Link>
         </button>
       </div>
     </nav>
